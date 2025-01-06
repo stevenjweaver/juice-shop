@@ -1,0 +1,50 @@
+name: Code Scan
+
+on:
+  push:
+    branches:
+      - main  # Change if your default branch is different.
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Set the desired Node.js version.
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Dependency-Check
+        run: |
+          wget -q https://dl.bintray.com/jeremyh/jars/owasp-dependency-check-cli-6.0.5-release.zip
+          unzip -q owasp-dependency-check-cli-6.0.5-release.zip
+          export PATH=$PATH:$GITHUB_WORKSPACE/OWASP\ Dependency-Check\ CLI/
+
+      - name: Run Dependency-Check
+        run: |
+          dependency-check.sh --project JuiceShop --scan . --out . --format ALL
+
+      - name: Run SonarQube Scan
+        run: |
+          npm install -g sonar-scanner
+          sonar-scanner \
+            -Dsonar.projectKey=Juice-Shop \
+            -Dsonar.host.url=${{ secrets.SONAR_HOST }} \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
+            -Dsonar.sources=.
+
+      - name: Upload Dependency-Check report
+        uses: actions/upload-artifact@v2
+        with:
+          name: dependency-check-report
+          path: dependency-check-report.html
+
+      - name: Upload SonarQube report (optional)
+        run: echo "SonarQube report generated, check your SonarQube instance."
