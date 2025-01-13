@@ -12,7 +12,7 @@ Steps to set up the OWASP Juice Shop application
 2. I preferentially use a AMD-64 based Mac, and typically use [Fork](https://git-fork.com/) as my Git client. I find that Fork is a really good Mac client with great support for things like interactively rebasing and handling merges. 
 3. I cloned the forked repo to my desktop.
 
-![GitFork Screenshot](screenshots/gitfork.gif)
+![GitFork Screenshot](screenshots/gitfork.jpg)
 
 ## Run the Sample Application
 
@@ -24,7 +24,7 @@ Steps to set up the OWASP Juice Shop application
 	4. Browse to <http://localhost:3000>
 However, the source distribution is only for x86 machines, not the latest ARM-based Macs. Because of that, the easiest way to run the Juice Shop application locally is to use Docker Desktop. Fortunately, I already had it installed, but it's straightforward to setup.
 
-![Docker Desktop Screenshot](screenshots/docker.gif)
+![Docker Desktop Screenshot](screenshots/docker.jpg)
 
 Installing Juice Shop into docker  is just 2 steps:
 
@@ -34,7 +34,7 @@ Installing Juice Shop into docker  is just 2 steps:
 
 Once the install is completed, the OWASP Juice Shop app is accessible: 
 
-![Juice Shop Screenshot](screenshots/juiceshop.gif)
+![Juice Shop Screenshot](screenshots/juiceshop.jpg)
 
 ## Create the output.md file
 
