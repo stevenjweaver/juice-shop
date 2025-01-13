@@ -75,4 +75,4 @@ Once the install is completed, the OWASP Juice Shop app is accessible:
 		- Require code scanning results.
 	6. After configuring the desired settings, click on **Create** to apply the branch protection rule.
 
-	![Branch Rules](branchrule.jpg)
+	![Branch Rules](screenshots/branchrule.jpg)
