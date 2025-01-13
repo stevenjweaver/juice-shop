@@ -66,7 +66,7 @@ Once the install is completed, the OWASP Juice Shop app is accessible:
 
 	1. In the Juice Shop repository, click on the **Settings** tab.
 	2. In the sidebar, click on **Branches.** This section allows you to manage branch protection rules.
-	3. Under the **Branch protection rules section, click on **Add rule**.
+	3. Under the **Branch protection rules** section, click on **Add rule**.
 	4. In the **Branch name pattern** field, enter `master` .
 	5. There are several options to enable protection, including:
 		- Require pull request reviews before merging.
