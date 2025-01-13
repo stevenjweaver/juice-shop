@@ -65,12 +65,14 @@ Once the install is completed, the OWASP Juice Shop app is accessible:
 7. In our Juice Shop repository, I can also change the repository settings to prevent automatically merging to the main branchby enabling **branch protection rules**. Here are the steps I took:
 
 	1. In the Juice Shop repository, click on the **Settings** tab.
-	2. In the sidebar, click on **Branches.** This section allows you to manage branch protection rules.
-	3. Under the **Branch protection rules** section, click on **Add rule**.
-	4. In the **Branch name pattern** field, enter `master` .
+	2. In the sidebar, click on **Branches**. This section allows you to manage branch protection rules.
+	2. Click on **Add branch ruleset**.
+	3. Under the **New branch ruleset**, add a **Ruleset Name**, provide an optional bypass list, identify the target branch, then add Branch rules.
 	5. There are several options to enable protection, including:
 		- Require pull request reviews before merging.
 		- Require status checks to pass before merging.
 		- Require signed commits.
-		- Include administrators.
-	6. After configuring the desired settings, click on **Create** or **Save changes** to apply the branch protection rule.
+		- Require code scanning results.
+	6. After configuring the desired settings, click on **Create** to apply the branch protection rule.
+
+	![Branch Rules](branchrule.jpg)
